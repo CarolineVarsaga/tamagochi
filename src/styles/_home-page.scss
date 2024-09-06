@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+}
+
+.animals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem; 
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .animal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .animal-img {
+      object-fit: cover;
+      border: 10px dotted rgb(233, 146, 111); 
+      border-radius: 50%; 
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        border: 11px dotted rgb(99, 226, 41); 
+        cursor: pointer;
+      }
+    }
+  }
+  
+}
