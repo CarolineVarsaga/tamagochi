@@ -1,8 +1,27 @@
-
+import useAnimals from "../hooks/useAnmials"
 
 const Home = () => {
+  const { animals, error, fetched } = useAnimals(); 
+
+  if (!fetched) return <p>Hämtar djuren...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
-    <div>Home</div>
+    <>
+      <h1>Välj ditt djur</h1>
+      <section className="animals">
+        {animals.map((animal) => {
+          return (
+            <div key={animal.id}>
+              <h2>{animal.name}</h2>
+              <picture>
+                <img src={animal.imageUrl} alt={animal.name} width={300} height={300} className="animal-img"/>
+              </picture>
+            </div>
+          );
+        })}
+      </section> 
+    </>
   )
 }
 
