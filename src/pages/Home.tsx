@@ -10,9 +10,9 @@ const Home = () => {
     <>
       <h1>Välj ditt djur</h1>
       <section className="animals">
-        {animals.map((animal) => {
+        {animals.slice(0, 6).map((animal) => {
           return (
-            <div key={animal.id}>
+            <div key={animal.id} className="animal-container">
               <h2>{animal.name}</h2>
               <picture>
                 <img src={animal.imageUrl} alt={animal.name} width={300} height={300} className="animal-img"/>
